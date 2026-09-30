@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import LetterGlitch from "@/components/react-bits/letter-glitch";
+import ShapeWaves from "@/components/react-bits/shape-waves";
 import { EASE, gsap, reducedMotion, useGSAP } from "@/lib/animations";
 
 export function AboutPreview() {
@@ -16,43 +16,24 @@ export function AboutPreview() {
       const enter = gsap.timeline({
         scrollTrigger: {
           trigger: root.current,
-          start: "top 72%",
+          start: "top 74%",
         },
       });
 
       enter
-        .from("[data-about-label]", { opacity: 0, y: 12, duration: 0.45, ease: EASE.out })
+        .from("[data-about-label]", { autoAlpha: 0, y: 14, duration: 0.45, ease: EASE.out })
         .from(
           "[data-about-line]",
-          { yPercent: 100, duration: 0.7, stagger: 0.12, ease: EASE.out },
+          { yPercent: 110, duration: 0.75, stagger: 0.1, ease: EASE.cinematic },
           0.08,
         )
-        .from(
-          "[data-about-body]",
-          { opacity: 0, y: 18, duration: 0.55, ease: EASE.out },
-          0.28,
-        );
+        .from("[data-about-body]", { autoAlpha: 0, y: 20, duration: 0.55, ease: EASE.out }, 0.28);
 
       gsap.fromTo(
-        "[data-about-bg]",
-        { xPercent: -18 },
+        "[data-about-field]",
+        { yPercent: -6 },
         {
-          xPercent: 16,
-          ease: "none",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 0.45,
-          },
-        },
-      );
-
-      gsap.fromTo(
-        "[data-about-copy]",
-        { y: 36 },
-        {
-          y: -28,
+          yPercent: 6,
           ease: "none",
           scrollTrigger: {
             trigger: root.current,
@@ -72,37 +53,36 @@ export function AboutPreview() {
       id="about-preview"
       className="surface relative z-10 overflow-hidden border-t border-white/15"
     >
-      <div
-        className="pointer-events-none absolute inset-0 opacity-70 [mask-image:linear-gradient(to_bottom,black_0%,transparent_24%,transparent_76%,black_100%)]"
-        aria-hidden
-      >
-        <LetterGlitch
-          glitchColors={["#2a0244", "#380356", "#5c0678"]}
-          glitchSpeed={140}
-          centerVignette={false}
-          outerVignette={false}
-          smooth
-          backgroundColor="transparent"
-          characters="01AWSBG<>/{}[]"
-          className="h-full w-full"
-        />
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
+        <div data-about-field className="absolute -inset-y-[8%] inset-x-0">
+          <ShapeWaves
+            color="#93009C"
+            hoverColor="#B000B2"
+            backgroundColor="#241030"
+            shapes="mixed"
+            cellSize={12}
+            dotSize={0.8}
+            speed={0.45}
+            scale={1.05}
+            contrast={1.1}
+            brightness={0.62}
+            flow={0.35}
+            glow={0.4}
+            fade={0.18}
+            interactive
+            className="h-full w-full"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(36,16,48,0.2),rgba(36,16,48,0.72)_18%,rgba(36,16,48,0.78)_82%,rgba(36,16,48,0.25))] lg:bg-[linear-gradient(90deg,rgba(36,16,48,0.88)_0%,rgba(36,16,48,0.7)_40%,rgba(36,16,48,0.58)_100%)]" />
       </div>
 
-      <div className="pointer-events-none absolute inset-0 z-[1] flex items-center overflow-hidden">
-        <p
-          data-about-bg
-          aria-hidden
-          className="pl-[4vw] text-[clamp(88px,18vw,280px)] leading-none font-medium tracking-[-0.07em] whitespace-nowrap text-transparent opacity-[0.045] [-webkit-text-stroke:1px_white]"
-        >
-          BUILDERS
-        </p>
-      </div>
-
-      <div
-        data-about-copy
-        className="relative z-10 mx-auto grid max-w-[1400px] gap-12 px-6 py-28 md:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-20 lg:py-40"
-      >
-        <div>
+      <div className="relative z-10 mx-auto grid max-w-[1400px] gap-12 px-6 py-28 md:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-end lg:gap-20 lg:py-40">
+        <div className="relative">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-x-8 -inset-y-6 bg-[#241030]/55"
+          />
+          <div className="relative">
           <p
             data-about-label
             className="font-mono text-[11px] tracking-[0.22em] text-white/70"
@@ -121,27 +101,34 @@ export function AboutPreview() {
               </span>
             </span>
           </h2>
+          </div>
         </div>
 
-        <div data-about-body className="max-w-[46ch] pb-2">
-          <p className="text-base leading-relaxed text-muted">
+        <div data-about-body className="relative max-w-[46ch] pb-2">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -inset-x-8 -inset-y-5 bg-[#241030]/82"
+          />
+          <div className="relative">
+          <p className="text-base leading-relaxed text-muted md:text-lg">
             AWS SBG exists for students who would rather build something real
             than sit through another slideshow.
           </p>
-          <p className="mt-5 text-base leading-relaxed text-muted">
+          <p className="mt-5 text-base leading-relaxed text-muted md:text-lg">
             We experiment with cloud infrastructure, serverless systems, AI,
             DevOps and everything between idea and deployment.
           </p>
           <Link
             href="/about"
-            className="footer-link mt-8 inline-flex items-center gap-3 font-mono text-[12px] tracking-[0.2em] uppercase"
+            className="footer-link group mt-8 inline-flex items-center gap-3 font-mono text-[12px] tracking-[0.2em] uppercase"
           >
             Discover our story
             <ArrowUpRight
-              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5"
+              className="size-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               aria-hidden
             />
           </Link>
+          </div>
         </div>
       </div>
     </section>
