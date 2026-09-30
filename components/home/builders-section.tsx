@@ -89,12 +89,12 @@ export function BuildersSection() {
   );
 
   return (
-    <section id="method" className="relative bg-black">
+    <section id="method" className="surface relative">
       <div className="mx-auto max-w-[1400px] px-6 py-28 md:px-10 lg:py-36">
-        <p className="font-mono text-[11px] tracking-[0.22em] text-white/45">
+        <p className="font-mono text-[11px] tracking-[0.22em] text-white/70">
           {"// 02 — METHOD"}
         </p>
-        <p className="mt-5 font-mono text-[12px] tracking-[0.18em] text-white/55">
+        <p className="mt-5 font-mono text-[12px] tracking-[0.18em] text-white/75">
           WHAT WE ACTUALLY DO
         </p>
         <h2 className="mt-4 max-w-[12ch] text-[clamp(48px,6.5vw,92px)] leading-[0.88] font-medium tracking-[-0.055em]">

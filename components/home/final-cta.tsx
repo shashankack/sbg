@@ -22,10 +22,10 @@ export function FinalCta() {
 
   return (
     <SectionReveal>
-      <section id="join" className="relative scroll-mt-28 overflow-hidden bg-black">
+      <section id="join" className="surface relative scroll-mt-28 overflow-hidden">
         <div className="absolute inset-0" aria-hidden>
           <GradientWaves
-            horizonColor="#000000"
+            horizonColor="#241030"
             waveColor="#6B0078"
             crestColor="#B000B2"
             speed={reduced ? 0 : 0.22}
@@ -42,7 +42,7 @@ export function FinalCta() {
           />
         </div>
         <div className="pointer-events-none relative mx-auto max-w-[1400px] px-6 py-32 md:px-10 lg:py-44">
-          <p className="font-mono text-[11px] tracking-[0.22em] text-white/45">
+          <p className="font-mono text-[11px] tracking-[0.22em] text-white/70">
             {"// 03 — ACCESS"}
           </p>
           <h2 className="mt-6 max-w-[12ch] text-[clamp(48px,7vw,104px)] leading-[0.88] font-medium tracking-[-0.055em]">

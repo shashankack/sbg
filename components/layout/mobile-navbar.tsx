@@ -146,7 +146,7 @@ export function MobileNavbar() {
     <div ref={root} className="lg:hidden">
       <div
         className={`fixed inset-x-0 top-0 z-[70] flex items-center justify-between px-5 py-4 transition-colors duration-300 ${
-          expanded || scrolled ? "bg-black/85 backdrop-blur-md" : "bg-transparent"
+          expanded || scrolled ? "bg-[#241030]/90 backdrop-blur-md" : "bg-transparent"
         }`}
       >
         <Logo />
@@ -171,7 +171,7 @@ export function MobileNavbar() {
           aria-label="Menu"
           className="fixed inset-0 z-[60] overflow-hidden"
         >
-          <div data-menu-scrim className="absolute inset-0 bg-black" />
+          <div data-menu-scrim className="surface absolute inset-0" />
           <div
             data-menu-panel
             className="relative flex h-full flex-col justify-between px-6 pt-28 pb-10"

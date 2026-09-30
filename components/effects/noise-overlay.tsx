@@ -5,7 +5,7 @@ export function NoiseOverlay() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed inset-0 z-[35] opacity-[0.09] mix-blend-soft-light"
+      className="pointer-events-none fixed inset-0 z-[35] opacity-[0.04] mix-blend-soft-light"
       style={{ backgroundImage: noise, backgroundSize: "180px 180px" }}
     />
   );

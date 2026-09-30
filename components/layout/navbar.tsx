@@ -19,10 +19,11 @@ export function Navbar() {
 
       if (!reducedMotion()) {
         gsap.from(shell, {
-          y: -22,
+          y: -28,
           opacity: 0,
-          duration: 0.7,
-          ease: EASE.out,
+          duration: 0.85,
+          delay: pathname === "/" ? 1.15 : 0,
+          ease: EASE.cinematic,
         });
       }
 

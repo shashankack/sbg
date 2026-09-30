@@ -5,7 +5,7 @@ import { navLinks } from "@/lib/site";
 
 export function Footer() {
   return (
-    <footer className="relative z-10 bg-black">
+    <footer className="surface relative z-10">
       <Separator className="bg-white/20" />
       <div className="mx-auto max-w-[1400px] px-6 pt-16 pb-10 md:px-10 md:pt-24">
         <p className="text-[clamp(48px,8vw,112px)] leading-[0.84] font-medium tracking-[-0.055em]">

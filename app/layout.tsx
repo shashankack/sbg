@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#000000",
+  themeColor: "#241030",
   colorScheme: "dark",
 };
 
@@ -37,7 +37,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-black font-sans text-foreground">
+      <body className="min-h-full bg-background font-sans text-foreground">
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&sessionStorage.getItem('sbg-boot')!=='1'){var s=document.createElement('style');s.id='sbg-boot-style';s.textContent='[data-boot]{visibility:visible!important}';document.head.appendChild(s)}}catch(e){}",
+          }}
+        />
         <a href="#main" className="skip-link">
           Skip to content
         </a>

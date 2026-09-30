@@ -5,15 +5,15 @@
 }
 
 :root {
-  --background: #000000;
-  --foreground: #f4f0f8;
-  --muted: #b7adc4;
+  --background: #241030;
+  --foreground: #f7f2fb;
+  --muted: #d4c8e2;
   --muted-dim: #8d849c;
   --border: rgba(255, 255, 255, 0.14);
   --ring: #b000b2;
   --primary: #f4f0f8;
   --primary-foreground: #000000;
-  --popover: #000000;
+  --popover: #241030;
   --popover-foreground: #f4f0f8;
   --accent: #140814;
   --accent-foreground: #f4f0f8;
@@ -50,12 +50,16 @@
 
 html {
   color-scheme: dark;
-  background: #000000;
+  background: #241030;
   scroll-padding-top: 6.5rem;
 }
 
+[data-boot] {
+  visibility: hidden;
+}
+
 body {
-  background: #000000;
+  background: #241030;
   color: var(--foreground);
   font-family: var(--font-geist-sans), sans-serif;
   text-rendering: geometricPrecision;
@@ -93,11 +97,21 @@ body {
   cursor: none !important;
 }
 
+.surface {
+  background-color: #241030;
+  background-image: radial-gradient(
+    ellipse 120% 80% at 50% 0%,
+    rgba(176, 0, 178, 0.34),
+    rgba(107, 0, 120, 0.16) 46%,
+    transparent 74%
+  );
+}
+
 .nav-shell {
   width: min(92vw, 1400px);
   border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: rgba(0, 0, 0, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(36, 16, 48, 0.72);
   backdrop-filter: blur(10px);
   box-shadow: 0 0 48px rgba(56, 3, 86, 0.28);
   transition:
@@ -110,7 +124,7 @@ body {
 
 .nav-shell.is-scrolled {
   width: min(86vw, 1240px);
-  background: rgba(0, 0, 0, 0.82);
+  background: rgba(36, 16, 48, 0.92);
   border-color: rgba(176, 0, 178, 0.45);
   backdrop-filter: blur(18px);
   box-shadow:
@@ -123,7 +137,7 @@ body {
   display: inline-flex;
   align-items: center;
   padding: 0.45rem 0.1rem;
-  color: rgba(255, 255, 255, 0.58);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;

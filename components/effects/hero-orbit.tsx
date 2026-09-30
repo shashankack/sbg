@@ -69,7 +69,7 @@ export function HeroOrbit() {
       ref={root}
       data-hero-scroll
       aria-hidden
-      className="relative z-[2] mx-auto aspect-square w-[min(88vw,420px)] lg:absolute lg:top-1/2 lg:right-[4%] lg:mx-0 lg:w-[min(44vw,620px)] lg:-translate-y-1/2"
+      className="relative z-[2] mx-auto aspect-square w-[min(78vw,380px)] lg:w-full lg:max-w-[520px]"
     >
       <div data-hero-visual className="h-full w-full [perspective:1100px]">
         <div className="orbit-float h-full w-full">

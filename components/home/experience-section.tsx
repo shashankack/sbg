@@ -234,7 +234,7 @@ export function ExperienceSection() {
   return (
     <section
       ref={root}
-      className="relative bg-black"
+      className="surface relative"
       onPointerMove={shiftField}
       onPointerLeave={resetField}
     >
@@ -247,7 +247,7 @@ export function ExperienceSection() {
         </div>
 
         <header className="relative z-10 max-w-md lg:pl-8">
-          <p className="font-mono text-[11px] tracking-[0.22em] text-white/45">
+          <p className="font-mono text-[11px] tracking-[0.22em] text-white/70">
             {"// SEQUENCE"}
           </p>
           <p className="mt-4 text-sm leading-relaxed text-muted">

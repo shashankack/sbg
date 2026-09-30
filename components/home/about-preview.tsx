@@ -70,7 +70,7 @@ export function AboutPreview() {
     <section
       ref={root}
       id="about-preview"
-      className="relative z-10 overflow-hidden border-t border-white/10 bg-black"
+      className="surface relative z-10 overflow-hidden border-t border-white/15"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-70 [mask-image:linear-gradient(to_bottom,black_0%,transparent_24%,transparent_76%,black_100%)]"
@@ -82,7 +82,7 @@ export function AboutPreview() {
           centerVignette={false}
           outerVignette={false}
           smooth
-          backgroundColor="#000000"
+          backgroundColor="transparent"
           characters="01AWSBG<>/{}[]"
           className="h-full w-full"
         />
@@ -105,7 +105,7 @@ export function AboutPreview() {
         <div>
           <p
             data-about-label
-            className="font-mono text-[11px] tracking-[0.22em] text-white/45"
+            className="font-mono text-[11px] tracking-[0.22em] text-white/70"
           >
             {"// 01 — ABOUT"}
           </p>
